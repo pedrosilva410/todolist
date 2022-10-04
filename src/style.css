@@ -78,7 +78,7 @@ main {
   transition: all 500ms;
 }
 
-.addItem:hover {
+#addItem:hover {
   cursor: pointer;
   background-color: #74941d;
 }
@@ -86,7 +86,7 @@ main {
 #list {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -100,6 +100,7 @@ main {
   color: #fff;
   border: 2px #fff solid;
   border-radius: 4px;
+  margin: 6px;
 }
 
 .itemText {
