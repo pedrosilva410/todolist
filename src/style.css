@@ -5,6 +5,7 @@
   padding: 0;
   border: none;
   font-family: "Roboto", sans-serif;
+  list-style: none;
 }
 
 a {
@@ -80,6 +81,13 @@ main {
 .addItem:hover {
   cursor: pointer;
   background-color: #74941d;
+}
+
+#list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .listItem {
