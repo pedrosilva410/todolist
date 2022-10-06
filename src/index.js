@@ -1,17 +1,17 @@
-document.getElementById('addItem').addEventListener('click', () => addItem());
+document.getElementById('addItem').addEventListener('click', addItem);
+const list = document.getElementById('list');
 
 
 function addItem() {
 	const newLi = document.createElement('li');
 	const newP = document.createElement('p');
 	const newButton = document.createElement('button');
-	const list = document.getElementById('list');
-	const input = document.getElementById('userInput').value;
+	const input = document.getElementById('userInput');
 
-	newP.innerHTML = input;
+	newP.innerHTML = input.value;
 	newButton.innerHTML = 'x';
 
-	document.getElementById('userInput').value = '';
+	input.value = '';
 
 	newButton.addEventListener('click', () => newLi.remove());
 
