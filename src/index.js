@@ -1,8 +1,8 @@
-document.getElementById('addItem').addEventListener('click', addItem);
+document.getElementById('inputArea').addEventListener('submit', addItem);
 const list = document.getElementById('list');
 
 
-function addItem() {
+function addItem(event) {
 	const newLi = document.createElement('li');
 	const newP = document.createElement('p');
 	const newButton = document.createElement('button');
@@ -26,4 +26,5 @@ function addItem() {
 	} else {
 		alert('Write something, unless you feel like doing nothing :)')
 	}
+	event.preventDefault();
 }
