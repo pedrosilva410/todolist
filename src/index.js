@@ -5,23 +5,32 @@ const list = document.getElementById('list');
 function addItem(event) {
 	const newLi = document.createElement('li');
 	const newP = document.createElement('p');
-	const newButton = document.createElement('button');
+	const removeButton = document.createElement('button');
+	const editButton = document.createElement('button');
 	const input = document.getElementById('userInput');
 
 	if (input.value) {
 		newP.innerHTML = input.value;
-		newButton.innerHTML = 'x';
+		removeButton.innerHTML = 'x';
+		editButton.innerHTML = '✎';
+
+		removeButton.addEventListener('click', () => newLi.remove());
+		editButton.addEventListener('click', () => {
+			let edit = prompt('Please enter new text', '')
+			if (edit) {
+				newP.innerHTML = edit;
+			}
+		})
 
 		input.value = '';
-
-		newButton.addEventListener('click', () => newLi.remove());
-
 		newLi.classList.add('listItem');
 		newP.classList.add('itemText');
-		newButton.classList.add('removeItem');
+		removeButton.classList.add('removeItem');
+		editButton.classList.add('editItem')
 
 		newLi.append(newP);
-		newLi.append(newButton);
+		newLi.append(removeButton);
+		newLi.append(editButton);
 		list.append(newLi);
 	} else {
 		alert('Write something, unless you feel like doing nothing :)')
