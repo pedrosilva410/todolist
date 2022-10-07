@@ -51,7 +51,7 @@ main {
   align-items: center;
 }
 
-.inputArea {
+#inputArea {
   width: 50%;
   height: 10%;
   margin-top: 20px;
@@ -123,11 +123,28 @@ main {
   cursor: pointer;
 }
 
+.editItem {
+  width: 30px;
+  height: 30px;
+  background-color: #e3e700;
+  border: 2px #fff solid;
+  border-radius: 4px;
+  font-size: 20px;
+  margin-left: 8px;
+  transition: all 500ms;
+}
+
+.editItem:hover {
+  background-color: #cccf00;
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 p {

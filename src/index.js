@@ -1,25 +1,39 @@
-document.getElementById('addItem').addEventListener('click', addItem);
+document.getElementById('inputArea').addEventListener('submit', addItem);
 const list = document.getElementById('list');
 
 
-function addItem() {
+function addItem(event) {
+	event.preventDefault();
 	const newLi = document.createElement('li');
 	const newP = document.createElement('p');
-	const newButton = document.createElement('button');
+	const removeButton = document.createElement('button');
+	const editButton = document.createElement('button');
 	const input = document.getElementById('userInput');
 
-	newP.innerHTML = input.value;
-	newButton.innerHTML = 'x';
+	if (input.value) {
+		newP.innerHTML = input.value;
+		removeButton.innerHTML = 'x';
+		editButton.innerHTML = '✎';
 
-	input.value = '';
+		removeButton.addEventListener('click', () => newLi.remove());
+		editButton.addEventListener('click', () => {
+			let edit = prompt('Please enter new text', '')
+			if (edit) {
+				newP.innerHTML = edit;
+			}
+		})
 
-	newButton.addEventListener('click', () => newLi.remove());
+		input.value = '';
+		newLi.classList.add('listItem');
+		newP.classList.add('itemText');
+		removeButton.classList.add('removeItem');
+		editButton.classList.add('editItem')
 
-	newLi.classList.add('listItem');
-	newP.classList.add('itemText');
-	newButton.classList.add('removeItem');
-
-	newLi.append(newP);
-	newLi.append(newButton);
-	list.append(newLi);
+		newLi.append(newP);
+		newLi.append(removeButton);
+		newLi.append(editButton);
+		list.append(newLi);
+	} else {
+		alert('Write something, unless you feel like doing nothing :)')
+	}
 }
