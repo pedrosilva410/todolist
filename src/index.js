@@ -3,6 +3,7 @@ const list = document.getElementById('list');
 
 
 function addItem(event) {
+	event.preventDefault();
 	const newLi = document.createElement('li');
 	const newP = document.createElement('p');
 	const removeButton = document.createElement('button');
@@ -35,5 +36,4 @@ function addItem(event) {
 	} else {
 		alert('Write something, unless you feel like doing nothing :)')
 	}
-	event.preventDefault();
 }
