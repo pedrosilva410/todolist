@@ -1,20 +1,20 @@
+//date
 const date = new Date();
 const todayDate = date.toLocaleDateString();
 document.getElementById('todayDate').innerHTML = todayDate;
-console.log(todayDate);
 
+//add item
 const userInput = document.getElementById('userInput');
-const addButton = document.getElementById('addButton');
 const todoList = document.getElementById('todoList');
 
-addButton.addEventListener(click, addItem);
-
 function addItem() {
-	const newItem = document.createElement('li');
-	const newText = document.createElement('p');
-	const newInput = userInput.innerHTML();
-
-	newText.appendChild(newInput);
-	newItem.appendChild(newText);
-	todoList.appendChild(newItem);
+	if (userInput.value === '') {
+		alert('You really got nothing to do?')
+	}
+	else {
+		const li = document.createElement('li');
+		li.innerHTML = userInput.value;
+		todoList.appendChild(li)
+		userInput.value = ''
+	}
 }
