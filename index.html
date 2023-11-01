@@ -12,15 +12,16 @@
 	<header>
 		<div class="title-date">
 			<h1>Todo List</h1>
-			<p id="todayDate">date</p> <!--this will display the date-->
+			<time id="todayDate"></time>
 		</div>
 		<div class="input">
-			<input type="text" id="userInput" placeholder="Write down your goals!">
-			<button id="addButton">+</button>
+			<input id="userInput" placeholder="Write down your goals!">
+			<button onclick="addItem()" type="submit" id="addButton">+</button>
 		</div>
 	</header>
 	<main>
-		<p>some notes...</p><!--this is where notes will be displayed-->
+		<ul id="todoList">
+		</ul>
 	</main>
 	<footer>
 		<p id="footerP">Coded by love by <a href="https://github.com/pedrosilva410" target="_blank">Pedro</a></p>
