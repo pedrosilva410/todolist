@@ -63,6 +63,19 @@ header {
   cursor: pointer;
 }
 
+.editButton {
+  color: #fff;
+  position: absolute;
+  right: 50px;
+  top: 6px;
+  height: 28px;
+  width: 42px;
+  border: #fff;
+  border-radius: 6px;
+  background-color: #08192c;
+  cursor: pointer;
+}
+
 .title-date {
   margin-right: 40px;
 }

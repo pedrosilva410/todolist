@@ -3,7 +3,6 @@ const date = new Date();
 const todayDate = date.toLocaleDateString();
 document.getElementById('todayDate').innerHTML = todayDate;
 
-let tasks = [];
 //add item
 const userInput = document.getElementById('userInput');
 const todoList = document.getElementById('todoList');
@@ -17,13 +16,15 @@ function addTask() {
 		const li = document.createElement('li');
 		li.innerHTML = userInput.value;
 		todoList.appendChild(li);
-		const span = document.createElement('span');
-		span.innerHTML = '\u00d7';
-		li.appendChild(span);
-		userInput.value = ''
+		const check = document.createElement('span');
+		check.innerHTML = '\u00d7';
+		li.appendChild(check);
+		const edit = document.createElement('button');
+		userInput.value = '';
 	}
 }
 
+// check and delete
 todoList.addEventListener('click', function (e) {
 	if (e.target.tagName === 'LI') {
 		e.target.classList.toggle('checked');
