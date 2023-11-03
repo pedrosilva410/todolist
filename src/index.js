@@ -3,11 +3,13 @@ const date = new Date();
 const todayDate = date.toLocaleDateString();
 document.getElementById('todayDate').innerHTML = todayDate;
 
+let tasks = [];
 //add item
 const userInput = document.getElementById('userInput');
 const todoList = document.getElementById('todoList');
 
-function addItem() {
+function addTask() {
+	event.preventDefault();
 	if (userInput.value === '') {
 		alert('You really got nothing to do?');
 	}

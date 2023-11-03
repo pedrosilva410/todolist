@@ -14,10 +14,10 @@
 			<h1>Todo List</h1>
 			<time id="todayDate"></time>
 		</div>
-		<div class="input">
+		<form id="taskForm" onsubmit="addTask(event)">
 			<input id="userInput" placeholder="Write down your goals!">
-			<button onclick="addItem()" type="submit" id="addButton">+</button>
-		</div>
+			<button type="submit" id="addButton">+</button>
+		</form>
 	</header>
 	<main>
 		<ul id="todoList">
