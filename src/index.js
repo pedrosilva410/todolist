@@ -19,8 +19,8 @@ function addTask() {
 		const check = document.createElement('span');
 		check.innerHTML = '\u00d7';
 		li.appendChild(check);
-		const edit = document.createElement('button');
 		userInput.value = '';
+		saveData();
 	}
 }
 
@@ -28,7 +28,20 @@ function addTask() {
 todoList.addEventListener('click', function (e) {
 	if (e.target.tagName === 'LI') {
 		e.target.classList.toggle('checked');
+		saveData();
 	} else if (e.target.tagName === 'SPAN') {
 		e.target.parentElement.remove();
+		saveData();
 	}
 }, false);
+
+//local storage
+function saveData() {
+	localStorage.setItem('list', todoList.innerHTML);
+}
+
+function renderList() {
+	todoList.innerHTML = localStorage.getItem('list');
+}
+
+renderList();
